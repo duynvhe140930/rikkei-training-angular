@@ -1,0 +1,30 @@
+<!-- <h1>demo-project</h1>
+<div class="container-home d-flex flex-row">
+  <div class="container-menu d-flex flex-column">
+    <p-button
+      label="Home"
+      icon="pi pi-home"
+      (click)="onClickSwitchComponent('')"
+      styleClass="p-button-sm"
+    ></p-button>
+    <p-button
+      label="demo-table"
+      (click)="onClickSwitchComponent('table')"
+      styleClass="p-button-sm"
+    ></p-button>
+    <p-button
+      label="demo-todo-list"
+      (click)="onClickSwitchComponent('todo-list')"
+      styleClass="p-button-sm"
+    ></p-button>
+  </div>
+  <ng-container [ngSwitch]="switch_component">
+    <app-home *ngSwitchDefault=""></app-home>
+    <app-demo-table *ngSwitchCase="'table'"></app-demo-table>
+    <app-demo-todo-list *ngSwitchCase="'todo-list'"></app-demo-todo-list>
+  </ng-container>
+</div> -->
+
+<app-demo-todo-list></app-demo-todo-list>
+
+<router-outlet></router-outlet>

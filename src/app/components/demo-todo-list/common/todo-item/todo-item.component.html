@@ -1,0 +1,53 @@
+<div
+  class="todo-item d-flex align-items-center justify-content-between"
+  [ngStyle]="{ opacity: todo.isComplete ? 0.5 : 'unset' }"
+>
+  <div class="display-todo d-flex">
+    <p-checkbox
+      [(ngModel)]="todo.isComplete"
+      [binary]="true"
+      inputId="binary"
+      [id]="todo.id"
+      (onChange)="changeTodoStatus()"
+    ></p-checkbox>
+    <label
+      [for]="todo.id"
+      class="ms-2 me-2"
+      style="word-break: break-all"
+      [ngStyle]="{
+        'text-decoration': todo.isComplete ? 'line-through' : 'unset'
+      }"
+      >{{ todo.content }}</label
+    >
+    <form *ngIf="isEditing" (keyup)="submitEdit($event)">
+      <input
+        type="text"
+        [(ngModel)]="todo.content"
+        name="todo"
+        #todos="ngModel"
+      />
+    </form>
+  </div>
+
+  <div class="action-with-todo d-flex flex-row">
+    <button
+      *ngIf="!todo.isComplete"
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-pencil"
+      class="p-button-rounded p-button-text p-0 btn-edit"
+      style="height: 2rem; width: 2rem"
+      (click)="isEditing = true"
+    ></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-trash"
+      class="p-button-rounded p-button-text p-0 btn-delete"
+      style="height: 2rem; width: 2rem"
+      (click)="removeTodo()"
+    ></button>
+  </div>
+</div>

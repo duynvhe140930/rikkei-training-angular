@@ -1,0 +1,14 @@
+.todo-container {
+  // width: calc(100vw - 150px);
+  background-color: rgba($color: #bfbfbf, $alpha: 0.5);
+  padding: 30px 0;
+  .todo-wrapper {
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    app-header {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

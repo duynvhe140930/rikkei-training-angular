@@ -1,0 +1,183 @@
+<div class="container-from">
+  <form (ngSubmit)="onSubmit()" #formUser="ngForm">
+    <div class="content-form d-flex flex-wrap">
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            required
+            [(ngModel)]="newUser.id"
+            name="id"
+            #id="ngModel"
+          />
+          <div
+            [hidden]="id.valid || id.pristine"
+            class="alert alert-danger position-absolute"
+          >
+            id is required !
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="name">name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="newUser.name"
+            name="name"
+            #name="ngModel"
+          />
+          <div
+            [hidden]="name.valid || name.pristine"
+            class="alert alert-danger position-absolute"
+          >
+            name is required !
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="date">start date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            required
+            [(ngModel)]="newUser.startDate"
+            name="date"
+            #date="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="position">position</label>
+          <select
+            class="form-control"
+            id="position"
+            required
+            [(ngModel)]="newUser.position"
+            name="position"
+            #position="ngModel"
+          >
+            <option *ngFor="let po of positions" [value]="po">
+              {{ po }}
+            </option>
+          </select>
+          <div
+            [hidden]="position.valid || position.pristine"
+            class="alert alert-danger position-absolute"
+          >
+            position is required !
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="email">email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            required
+            email
+            [(ngModel)]="newUser.email"
+            name="email"
+            #email="ngModel"
+          />
+          <div
+            [hidden]="email.valid || email.pristine"
+            class="alert alert-danger position-absolute"
+          >
+            email is required !
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="address">address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            required
+            [(ngModel)]="newUser.address"
+            name="address"
+            #address="ngModel"
+          />
+          <div
+            [hidden]="address.valid || address.pristine"
+            class="alert alert-danger position-absolute"
+          >
+            address is required !
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="phone">phone</label>
+          <input
+            type="number"
+            class="form-control"
+            id="phone"
+            required
+            [(ngModel)]="newUser.phone"
+            name="phone"
+            #phone="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="status">status</label>
+          <input
+            type="text"
+            class="form-control"
+            id="status"
+            required
+            [(ngModel)]="newUser.status"
+            name="status"
+            #status="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="col-4 d-flex">
+        <div class="form-group col-11 d-flex align-items-end">
+          <p-checkbox
+            [(ngModel)]="newUser.admin"
+            [binary]="true"
+            inputId="admin"
+            [ngModelOptions]="{ standalone: true }"
+            class="mb-2"
+          ></p-checkbox>
+          <label for="admin" class="mb-2 ms-2">admin</label>
+        </div>
+      </div>
+    </div>
+    <div class="container-submit d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-success mt-5"
+        [disabled]="!formUser.valid || formUser.pristine"
+      >
+        Create new User
+      </button>
+    </div>
+    <!-- - -->
+  </form>
+  <!-- {{ newUser | json }} -->
+</div>

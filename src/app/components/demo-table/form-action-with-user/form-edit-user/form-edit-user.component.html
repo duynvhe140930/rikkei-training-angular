@@ -1,0 +1,176 @@
+<div class="container-from">
+  <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+    <div class="content-form d-flex flex-wrap">
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            required
+            [(ngModel)]="objEdit.id"
+            name="id"
+            #id="ngModel"
+            disabled
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="name">name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="objEdit.name"
+            name="name"
+            #name="ngModel"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="col-4">
+        <div class="form-group col-11">
+          <label for="date">start date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            required
+            name="date"
+            [(ngModel)]="objEdit.startDate"
+            #date="ngModel"
+            [value]="objEdit.startDate"
+          />
+        </div>
+      </div> -->
+
+      <!-- <div class="col-4">
+        <div class="form-group col-11">
+          <label for="position">position</label>
+          <input
+            type="text"
+            class="form-control"
+            id="position"
+            required
+            [(ngModel)]="objEdit.position"
+            name="position"
+            #position="ngModel"
+            [value]="objEdit.position"
+          />
+        </div>
+      </div> -->
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="position">position</label>
+          <select
+            class="form-control"
+            id="position"
+            required
+            [(ngModel)]="objEdit.position"
+            name="position"
+          >
+            <option *ngFor="let pos of positions" [value]="pos">
+              {{ pos }}
+            </option>
+          </select>
+
+          <!-- <div
+            [hidden]="position.valid || position.pristine || name.touched"
+            class="alert alert-danger position-absolute"
+          >
+            position is required !
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="email">email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="objEdit.email"
+            name="email"
+            #email="ngModel"
+            [value]="objEdit.email"
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="address">address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            required
+            [(ngModel)]="objEdit.address"
+            name="address"
+            #address="ngModel"
+            [value]="objEdit.address"
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="phone">phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            required
+            [(ngModel)]="objEdit.phone"
+            name="phone"
+            #phone="ngModel"
+            [value]="objEdit.phone"
+          />
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group col-11">
+          <label for="status">status</label>
+          <input
+            type="text"
+            class="form-control"
+            id="status"
+            required
+            [(ngModel)]="objEdit.status"
+            name="status"
+            #status="ngModel"
+            [value]="objEdit.status"
+          />
+        </div>
+      </div>
+
+      <div class="col-4 d-flex">
+        <div class="form-group col-11 d-flex align-items-end">
+          <p-checkbox
+            [(ngModel)]="objEdit.admin"
+            [binary]="true"
+            inputId="admin"
+            [ngModelOptions]="{ standalone: true }"
+            class="mb-2"
+          ></p-checkbox>
+          <label for="admin" class="mb-2 ms-2">admin</label>
+        </div>
+      </div>
+    </div>
+    <div class="container-submit d-flex justify-content-center">
+      <button type="submit" class="btn btn-success mt-5">Edit user</button>
+    </div>
+    <!-- - -->
+  </form>
+  {{ objEdit | json }}
+  <br />
+  {{ user | json }}
+</div>
