@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Filter } from '../models/filtering.model';
 import { Todo } from '../models/todo.model';
 import { LocalStorageService } from './local-storage.service';
@@ -12,9 +12,12 @@ export class TodoService {
 
   todos: Todo[] = [];
   filteredTodos: Todo[] = [];
-  length: number = 0;
+  lengthSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   displayTodoSubject: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>([]);
   currentFilter: Filter = Filter.All;
+
+  length: Observable<number> = this.lengthSubject.asObservable();
+  todoo: Observable<Todo[]> = this.displayTodoSubject.asObservable();
 
   constructor(private storageService: LocalStorageService) {}
 
@@ -56,14 +59,11 @@ export class TodoService {
     this.currentFilter = filter;
     switch (filter) {
       case Filter.Active:
-        this.filteredTodos = this.todos.filter(
-          (item) => item.isComplete === true
-        );
+        this.filteredTodos = this.todos.filter((item) => !item.isComplete);
+        console.log(this.filteredTodos);
         break;
       case Filter.Complete:
-        this.filteredTodos = this.todos.filter(
-          (item) => (item.isComplete = false)
-        );
+        this.filteredTodos = this.todos.filter((item) => item.isComplete);
         break;
       case Filter.All:
         this.filteredTodos = JSON.parse(JSON.stringify(this.todos));
@@ -75,6 +75,6 @@ export class TodoService {
 
   private updateTodoData() {
     this.displayTodoSubject.next(this.filteredTodos);
-    this.length = this.todos.length;
+    this.lengthSubject.next(this.todos.length);
   }
 }

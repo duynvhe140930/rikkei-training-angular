@@ -9,12 +9,12 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  todos: Todo[] = [];
+  todos: Observable<Todo[]> = new Observable<Todo[]>();
 
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.todos = this.todoService.todos;
+    this.todos = this.todoService.todoo;
   }
   updateTodo(todo: Todo) {
     this.todoService.updateTodo(todo);

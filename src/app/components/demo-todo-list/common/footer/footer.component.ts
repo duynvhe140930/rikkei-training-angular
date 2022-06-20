@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { FillterButton, Filter } from 'src/app/models/filtering.model';
 import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
@@ -16,15 +17,20 @@ export class FooterComponent implements OnInit {
   ];
 
   length = 0;
+  distroy: Subject<null> = new Subject<null>();
   constructor(private todoService: TodoService) {}
 
   temp: Todo[] = [];
 
   ngOnInit(): void {
     this.temp = this.todoService.todos;
-    this.length = this.todoService.length;
+
+    this.todoService.length
+      .pipe(takeUntil(this.distroy))
+      .subscribe((length) => (this.length = length));
   }
-  test(label: string) {
-    console.log('ok', label);
+  onFilter(tyle: Filter) {
+    this.todoService.filterTodos(tyle);
+    console.log('ok', tyle);
   }
 }
