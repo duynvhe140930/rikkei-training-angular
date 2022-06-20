@@ -67,7 +67,6 @@ export class TodoService {
     switch (filter) {
       case Filter.Active:
         this.filteredTodos = this.todos.filter((item) => !item.isComplete);
-        console.log(this.filteredTodos);
         break;
       case Filter.Complete:
         this.filteredTodos = this.todos.filter((item) => item.isComplete);
