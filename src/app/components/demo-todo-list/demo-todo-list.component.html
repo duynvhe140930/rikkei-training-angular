@@ -2,7 +2,9 @@
   <h1 class="title">todos</h1>
   <div class="todo-wrapper p-0 d-flex flex-column col-6">
     <app-header></app-header>
-    <app-todo-list></app-todo-list>
+    <app-todo-list
+      [ngStyle]="{ maxHeight: '550px', overflow: 'auto' }"
+    ></app-todo-list>
     <app-footer></app-footer>
   </div>
 </div>

@@ -30,6 +30,10 @@ import { HeaderComponent } from './components/demo-todo-list/common/header/heade
 import { FooterComponent } from './components/demo-todo-list/common/footer/footer.component';
 import { TodoInputComponent } from './components/demo-todo-list/common/todo-input/todo-input.component';
 import { TodoService } from './services/todo.service';
+import { LayoutComponent } from './components/layout/layout.component';
+import { NextPageOneComponent } from './components/next-page-one/next-page-one.component';
+import { NextPageTwoComponent } from './components/next-page-two/next-page-two.component';
+import { LayoutTwoComponent } from './components/layout-two/layout-two.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,10 @@ import { TodoService } from './services/todo.service';
     HeaderComponent,
     FooterComponent,
     TodoInputComponent,
+    LayoutComponent,
+    NextPageOneComponent,
+    NextPageTwoComponent,
+    LayoutTwoComponent,
   ],
   imports: [
     BrowserModule,
