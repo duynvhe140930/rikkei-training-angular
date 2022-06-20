@@ -31,6 +31,8 @@ export class FooterComponent implements OnInit {
   }
   onFilter(tyle: Filter) {
     this.todoService.filterTodos(tyle);
-    console.log('ok', tyle);
+  }
+  clearTodo() {
+    this.todoService.clearTodo();
   }
 }

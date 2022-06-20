@@ -34,6 +34,13 @@ export class TodoService {
     this.updateTodoData();
   }
 
+  clearTodo() {
+    const newTodo: Todo[] = [];
+    this.todos = newTodo;
+    this.updateToLocalStorage();
+    this.storageService.clear();
+  }
+
   addTodo(content: string) {
     const date = new Date(Date.now()).getTime();
     const newTodo: Todo = {
