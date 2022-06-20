@@ -4,6 +4,7 @@
 >
   <div class="display-todo d-flex">
     <p-checkbox
+      *ngIf="!isEditing"
       [(ngModel)]="todo.isComplete"
       [binary]="true"
       inputId="binary"
@@ -11,6 +12,7 @@
       (onChange)="changeTodoStatus()"
     ></p-checkbox>
     <label
+      *ngIf="!isEditing"
       [for]="todo.id"
       class="ms-2 me-2"
       style="word-break: break-all"
