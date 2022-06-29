@@ -34,6 +34,9 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NextPageOneComponent } from './components/next-page-one/next-page-one.component';
 import { NextPageTwoComponent } from './components/next-page-two/next-page-two.component';
 import { LayoutTwoComponent } from './components/layout-two/layout-two.component';
+import { MenuTypeFilmComponent } from './components/home/common/menu-type-film/menu-type-film.component';
+import { TypeFilmComponent } from './components/home/common/type-film/type-film.component';
+import { DetailMovieComponent } from './components/home/common/detail-movie/detail-movie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,9 @@ import { LayoutTwoComponent } from './components/layout-two/layout-two.component
     NextPageOneComponent,
     NextPageTwoComponent,
     LayoutTwoComponent,
+    MenuTypeFilmComponent,
+    TypeFilmComponent,
+    DetailMovieComponent,
   ],
   imports: [
     BrowserModule,

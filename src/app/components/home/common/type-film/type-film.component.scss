@@ -1,0 +1,13 @@
+.container-type-film {
+  background-color: beige;
+  margin: 0 5px 10px;
+  height: 40px;
+  border: 1px dotted red;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  color: green;
+}

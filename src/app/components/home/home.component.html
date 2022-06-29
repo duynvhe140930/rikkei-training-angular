@@ -1,3 +1,20 @@
-<div class="home d-flex justify-content-center align-items-center">
-  <h1>content demo will display in here!</h1>
+<div class="home d-flex flex-column">
+  <div
+    class="header-home d-flex align-items-center justify-content-center"
+    style="
+      width: 100%;
+      background-color: aliceblue;
+      color: red;
+      font-size: 28px;
+      height: 70px;
+    "
+  >
+    Top 5 movies !
+  </div>
+  <div class="body-home d-flex flex-row">
+    <app-menu-type-film></app-menu-type-film>
+    <app-detail-movie
+      style="width: 100%; background: cadetblue"
+    ></app-detail-movie>
+  </div>
 </div>
