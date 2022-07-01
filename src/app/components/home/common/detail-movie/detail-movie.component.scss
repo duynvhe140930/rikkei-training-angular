@@ -1,8 +1,14 @@
-.body-detail-movie {
-  background-color: white;
-  width: 25%;
+.box-detail {
   height: 200px;
-  box-shadow: 0 0 5px 1px red;
-  border: 1px solid gray;
-  border-radius: 0.25rem;
+
+  .detail-film {
+    background-color: white;
+    box-shadow: 0 0 5px 1px red;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.5s;
+    }
+  }
 }

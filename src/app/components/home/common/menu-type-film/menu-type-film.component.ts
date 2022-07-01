@@ -10,7 +10,10 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MenuTypeFilmComponent implements OnInit {
   movies: Movie[] = [];
   types: TypeMovie[] = [];
-
+  typeSelected: TypeMovie = {
+    id: 0,
+    type: 'all',
+  };
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
@@ -19,5 +22,9 @@ export class MenuTypeFilmComponent implements OnInit {
 
   getAllTypeMovies() {
     this.movieService.getAllTypeMovies().subscribe((e) => (this.types = e));
+  }
+
+  selectedItem(type: TypeMovie) {
+    this.typeSelected = type;
   }
 }

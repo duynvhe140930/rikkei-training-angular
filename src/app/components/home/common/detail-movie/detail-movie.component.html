@@ -1,1 +1,14 @@
-<div class="body-detail-movie">asdsadsa</div>
+<div class="container-box row m-0 p-0">
+  <div
+    *ngFor="let movie of movies"
+    class="box-detail col-3 row m-0 p-0 mb-3 mt-3 justify-content-center"
+  >
+    <div class="detail-film col-11">
+      <h3>{{ movie.name }}</h3>
+      <h5>{{ movie.premiereData }}</h5>
+      <div class="d-flex">
+        <p *ngFor="let type of movie.type">{{ type.type }}, &nbsp;</p>
+      </div>
+    </div>
+  </div>
+</div>

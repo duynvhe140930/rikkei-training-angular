@@ -1,4 +1,9 @@
 <div class="container-menu-film">
   <div class="example-space" style="height: 15px"></div>
-  <app-type-film *ngFor="let type of types" [value]="type.type"></app-type-film>
+  <app-type-film
+    *ngFor="let type of types"
+    [value]="type.type"
+    (onClickSelected)="selectedItem(type)"
+    [typeSelected]="type.id === typeSelected.id ? true : false"
+  ></app-type-film>
 </div>

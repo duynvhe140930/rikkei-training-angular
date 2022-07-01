@@ -11,10 +11,10 @@
   >
     Top 5 movies !
   </div>
-  <div class="body-home d-flex flex-row">
-    <app-menu-type-film></app-menu-type-film>
-    <app-detail-movie
-      style="width: 100%; background: cadetblue"
-    ></app-detail-movie>
+  <div class="body-home d-flex col">
+    <app-menu-type-film class="col-2"></app-menu-type-film>
+    <div class="container-detail d-flex col-10">
+      <app-detail-movie class="col" [movies]="movies"></app-detail-movie>
+    </div>
   </div>
 </div>
