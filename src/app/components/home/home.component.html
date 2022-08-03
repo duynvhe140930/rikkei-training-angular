@@ -1,6 +1,6 @@
 <div class="home d-flex flex-column">
   <div
-    class="header-home d-flex align-items-center justify-content-center"
+    class="header-home d-flex align-items-center justify-content-center position-relative"
     style="
       width: 100%;
       background-color: aliceblue;
@@ -10,11 +10,70 @@
     "
   >
     Top 5 movies !
+    <p-button
+      class="position-absolute btn-addnew"
+      label="Add new Movie"
+      icon="pi pi-plus"
+      (onClick)="showModalDialog()"
+    ></p-button>
   </div>
   <div class="body-home d-flex col">
-    <app-menu-type-film class="col-2"></app-menu-type-film>
+    <app-menu-type-film
+      class="col-2"
+      (selectedType)="filterMovies($event)"
+    ></app-menu-type-film>
     <div class="container-detail d-flex col-10">
       <app-detail-movie class="col" [movies]="movies"></app-detail-movie>
     </div>
   </div>
 </div>
+<p-dialog
+  header="Header"
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <!-- somethings -->
+
+  <form (ngSubmit)="onSubmitAddNewMovie()" #form="ngForm">
+    <div class="row">
+      <div style="font-weight: bold" class="col-6">
+        <div class="form-group col-11">
+          <label for="id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            required
+            [(ngModel)]="newMovie.id"
+            name="id"
+            #id="ngModel"
+          />
+          <!-- <div
+          [hidden]="id.valid || id.pristine"
+          class="alert alert-danger position-absolute"
+        >
+          id is required !
+        </div> -->
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="displayModal = false"
+      label="Yes"
+      class="p-button-text"
+    ></p-button>
+    <p-button
+      icon="pi pi-times"
+      (click)="displayModal = false"
+      label="No"
+    ></p-button>
+  </ng-template>
+</p-dialog>

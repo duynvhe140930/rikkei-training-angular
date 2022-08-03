@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Movie, TypeMovie } from 'src/app/models/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -8,6 +8,8 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./menu-type-film.component.scss'],
 })
 export class MenuTypeFilmComponent implements OnInit {
+  @Output() selectedType = new EventEmitter<string>();
+
   movies: Movie[] = [];
   types: TypeMovie[] = [];
   typeSelected: TypeMovie = {
@@ -25,6 +27,8 @@ export class MenuTypeFilmComponent implements OnInit {
   }
 
   selectedItem(type: TypeMovie) {
+    this, this.selectedType.emit(type.type);
     this.typeSelected = type;
+    // this.movieService.getMoviesByType(type.type).subscribe();
   }
 }

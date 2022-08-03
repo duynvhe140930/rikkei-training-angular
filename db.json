@@ -1,0 +1,127 @@
+{
+  "movies": [
+    {
+      "id": 2,
+      "name": "Star War 12",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Star War 4",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Star War",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Star War",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Star War 1",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        },
+        {
+          "id": 2,
+          "type": "war"
+        },
+        {
+          "id": 3,
+          "type": "adventure"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Star War 41",
+      "premiereData": "22/06/2016",
+      "type": [
+        {
+          "id": 1,
+          "type": "action"
+        }
+      ]
+    }
+  ],
+  "typeOfMovie": [
+    {
+      "id": 0,
+      "type": "all"
+    },
+    {
+      "id": 1,
+      "type": "action"
+    },
+    {
+      "id": 2,
+      "type": "humor"
+    },
+    {
+      "id": 3,
+      "type": "war"
+    },
+    {
+      "id": 4,
+      "type": "family"
+    },
+    {
+      "id": 5,
+      "type": "cartoon"
+    },
+    {
+      "id": 6,
+      "type": "history"
+    },
+    {
+      "id": 7,
+      "type": "adventure"
+    },
+    {
+      "id": 8,
+      "type": "horrified"
+    },
+    {
+      "id": 9,
+      "type": "romantic"
+    },
+    {
+      "id": 10,
+      "type": "fiction"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
